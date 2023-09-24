@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplqprajc4ny"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_21wwt"]
+[ext_resource type="PackedScene" uid="uid://ccn0fbo1jx2j7" path="res://Cenas/req_btn.tscn" id="2_ftv08"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_21wwt")
+button = ExtResource("2_ftv08")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="leaderboard" type="RichTextLabel" parent="."]
+offset_left = 333.0
+offset_right = 874.0
+offset_bottom = 647.0
+
+[node name="req_list" type="ScrollContainer" parent="."]
+offset_right = 303.0
+offset_bottom = 643.0
+
+[node name="btn_list" type="VBoxContainer" parent="req_list"]
+layout_mode = 2
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

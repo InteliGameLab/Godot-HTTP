@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Placar de Líderes"
-run/main_scene="res://Cenas/req_btn.tscn"
+run/main_scene="res://Cenas/main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
