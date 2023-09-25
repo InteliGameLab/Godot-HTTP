@@ -15,13 +15,14 @@ layout_mode = 0
 offset_top = 55.0
 offset_right = 134.0
 offset_bottom = 86.0
-text = "Player name"
+placeholder_text = "Player name"
 
 [node name="score" type="LineEdit" parent="."]
+layout_mode = 0
 offset_top = 103.0
 offset_right = 134.0
 offset_bottom = 134.0
-text = "Score"
+placeholder_text = "Score"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
