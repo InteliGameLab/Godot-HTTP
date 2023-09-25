@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2nxoa1mpfno1"]
+
+[ext_resource type="Script" path="res://Scripts/post_btn.gd" id="1_n6v7n"]
+
+[node name="post_btn" type="Button"]
+offset_right = 135.0
+offset_bottom = 8.0
+text = "Post"
+script = ExtResource("1_n6v7n")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="player" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 134.0
+offset_bottom = 86.0
+placeholder_text = "Player name"
+
+[node name="score" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 103.0
+offset_right = 134.0
+offset_bottom = 134.0
+placeholder_text = "Score"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

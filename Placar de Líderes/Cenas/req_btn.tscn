@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccn0fbo1jx2j7"]
+
+[ext_resource type="Script" path="res://Scripts/req_btn.gd" id="1_x58ii"]
+
+[node name="req_btn" type="Button"]
+script = ExtResource("1_x58ii")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_http_post"]
